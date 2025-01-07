@@ -2,7 +2,9 @@
 
 ## Introduction
 
-The Google Patents Image Scraper is a versatile Python tool that automates the downloading of patent images from Google Patents. Designed to support both GUI and non-GUI interactions within a single application, it caters to a wide range of users, from those who prefer a visual interface to those who need the efficiency of command-line execution.
+The Google Patents Image Scraper is a versatile tool that automates the downloading of patent images from Google Patents. Designed to support non-GUI interactions within a single application.
+
+The project consists of 
 
 ## Features
 
