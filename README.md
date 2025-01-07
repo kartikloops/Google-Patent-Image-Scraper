@@ -4,37 +4,21 @@
 
 The Google Patents Image Scraper is a versatile tool that automates the downloading of patent images from Google Patents. Designed to support non-GUI interactions within a single application.
 
-The project consists of 
+The project consists of two steps first is to get the patent id of desired topic. For example in this project I want to extract the images of chemical formulas (IUPAC) in the patent_extraction.ipynb specify the topic related to which you want to get the images and how much patent numbers do you want after that it will print that much patenet numbers.
 
-## Features
+Now create a excel file named "All_patent_all.xlsx" and paste the patent numbers in a column called : patent_number
 
-- **Unified GUI and Non-GUI Functionality**: Seamlessly switch between a Graphical User Interface and a Command-Line Interface within the same application.
-- **Robust Error Handling**: The tool is equipped with error handling to manage and retry after exceptions, ensuring reliability and stability.
-- **Progress Summary Generation**: After completion, the tool generates a summary of the scraping session, detailing the number of images successfully downloaded, any skipped or failed attempts, and other relevant metrics.
-
-
-  ![ezgif com-resize](https://github.com/narayan123411/WebScrapping-/assets/53684708/21561ddf-7110-4974-979d-22d4e446b11c)
-
+now we have the oatent number and it is time to run the script that extracts all the images in that patenet for that you need chromedriver for that please follow this :
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install --cask chromedriver
+which chromedriver
+chromedriver --version
 
 
-## How It Works
+and replace the path of chromedriver_path = "/usr/local/bin/chromedriver"
 
-The tool works in the following way:
 
-1. Upon launch, users can choose to operate in GUI mode or proceed with non-GUI mode.
-2. The scraper navigates to Google Patents, searches for specified patents, and retrieves image URLs.
-3. Images are then downloaded and saved to a specified directory.
-4. Throughout the scraping process, progress updates are displayed, either within the GUI or in the command line.
-5. A summary report is provided at the end, summarizing the session's outcomes.
-
-## Getting Started
-
-Follow these steps to use the Google Patents Image Scraper:
-
-1. Clone this repository to your local machine.
-2. Install the required dependencies from `requirements.txt`.
-3. Execute the scraper file `Automation.ipynb`
-4. Attach Patent Numbers as an input and begin the scraping process.
+the jupyter notebook auto matcially installs the modeules and at the end it collects the imagesby creating a folder called Patent_Images
 
 ## Contribution
 
