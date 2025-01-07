@@ -1,30 +1,52 @@
 # Google Patents Image Scraper
 
+![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Python](https://img.shields.io/badge/Python-3.7%2B-blue.svg)
+![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-orange.svg)
+
+## Table of Contents
+
+1. [Introduction](#introduction)  
+2. [Features](#features)  
+3. [Installation](#installation)  
+4. [Usage](#usage)  
+   - [1. Retrieving Patent IDs](#1-retrieving-patent-ids)  
+   - [2. Downloading Patent Images](#2-downloading-patent-images)  
+5. [Project Structure](#project-structure)  
+6. [Contributing](#contributing)  
+7. [License](#license)  
+
+---
+
 ## Introduction
 
-The Google Patents Image Scraper is a versatile tool that automates the downloading of patent images from Google Patents. Designed to support non-GUI interactions within a single application.
+**Google Patents Image Scraper** automates the process of:
+1. **Retrieving patent numbers** based on a given search term (e.g., “IUPAC chemical formulas”).
+2. **Downloading all images** associated with each patent, such as figures, drawings, or chemical structures.
 
-The project consists of two steps first is to get the patent id of desired topic. For example in this project I want to extract the images of chemical formulas (IUPAC) in the patent_extraction.ipynb specify the topic related to which you want to get the images and how much patent numbers do you want after that it will print that much patenet numbers.
+This project is designed to run headlessly (without a visible browser GUI) but can be easily adapted to display a browser window for debugging or demonstration purposes.
 
-Now create a excel file named "All_patent_all.xlsx" and paste the patent numbers in a column called : patent_number
+---
 
-now we have the oatent number and it is time to run the script that extracts all the images in that patenet for that you need chromedriver for that please follow this :
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install --cask chromedriver
-which chromedriver
-chromedriver --version
+## Features
 
+- **Automated Search**: Uses Selenium to navigate Google Patents and retrieve patent IDs for a given search term.  
+- **Batch Processing**: Specify how many pages you want to scrape to gather patent IDs.  
+- **Image Download**: Once you have the patent numbers, the script visits each patent page on Google Patents, collects available images, and saves them to your local machine.  
+- **Error Handling & Retries**: The downloader makes multiple attempts to handle any transient network errors.  
+- **Headless Mode**: You can toggle `headless` mode on or off to see the browser activity.  
 
-and replace the path of chromedriver_path = "/usr/local/bin/chromedriver"
+---
 
+## Installation
 
-the jupyter notebook auto matcially installs the modeules and at the end it collects the imagesby creating a folder called Patent_Images
+Before you begin, ensure you have the following installed:
 
-## Contribution
-
-Feedback and contributions are highly appreciated. If you'd like to contribute or suggest improvements, please fork the repository, push your changes, and create a pull request. For larger changes or feature suggestions, please open an issue first to discuss what you would like to change.
-
-Please star the project if you find it helpful!
-
-
-   
+1. **Python 3.7+**  
+2. **Chrome** browser (latest version recommended)  
+3. **Chromedriver** (matching your Chrome version):  
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   brew install --cask chromedriver
+   which chromedriver
+   chromedriver --version
