@@ -50,3 +50,27 @@ Before you begin, ensure you have the following installed:
    brew install --cask chromedriver
    which chromedriver
    chromedriver --version
+
+
+  # Usage
+
+There are two main steps to using this project:
+
+1. **Retrieving Patent IDs** (`patent_extraction.ipynb`)  
+2. **Downloading Images** (`Automation.ipynb`)  
+
+For a quick tutorial, you can watch [this YouTube video](https://youtu.be/PV6BjJM5a1s).
+
+---
+
+### 1. Retrieving Patent IDs
+
+The `patent_extraction.ipynb` file automates the process of querying Google Patents for a given keyword or topic and extracts a specified number of patent IDs.
+
+1. Open `patent_extraction.ipynb`.
+2. Modify the `search_term` and `n_pages` variables to suit your needs:
+   ```python
+   # Example usage
+   search_term = "IUPAC"  # Replace with your search term (e.g., "solar panels")
+   n_pages = 2  # Number of pages to process
+
